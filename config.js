@@ -19,7 +19,9 @@ module.exports = {
   autodiscoverFilter: ['go-embedded-c/**'],
   onboarding: false,
   requireConfig: 'optional',
-  dependencyDashboard: true,
+  // The object form: renovate-config-validator --strict refuses the boolean
+  // as a config that needs migrating.
+  dependencyDashboard: { enabled: true },
   repositoryCache: 'enabled',
   // default.json beside this file is a PRESET, and a preset reaches a
   // repository only through an `extends` that names it. Sitting in the
